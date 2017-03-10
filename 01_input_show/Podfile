@@ -1,12 +1,12 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'Counter' do
+target '01_input_show' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-	
-  # Pods for Counter
-   pod 'RxSwift'
-   pod 'RxCocoa'
+
+  # Pods for 01_input_show
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 end
