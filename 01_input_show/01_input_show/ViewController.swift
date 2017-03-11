@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         
-        _ = textfield.rx.text.bindTo(label.rx.text).addDisposableTo(disposeBag)
+        _ = textfield.rx.text.bindTo(label.rx.text).disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
