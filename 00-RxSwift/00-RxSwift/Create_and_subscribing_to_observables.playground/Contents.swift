@@ -127,9 +127,102 @@ exampleOf(description: "range"){
 exampleOf(description: "repeatElement" ){
 
     Observable.repeatElement("🐩")
-        .take(3)//至发射3次
+        .take(3)//只发射3次
         .subscribe{print($0)}
         .disposed(by: DisposeBag())
 }
 
-///generate:
+///generate: 创建一个 发射所有条件为真的值   的响应序列
+
+exampleOf(description: "generate"){
+
+    Observable.generate(initialState: 0, condition: { (T) -> Bool in
+        
+        T < 3
+        
+    }, iterate: {  $0 + 1})
+        .subscribe{
+    
+          print($0)
+    }.addDisposableTo(DisposeBag())
+}
+
+
+///deferred :  为所有订阅者创建响应序列
+
+exampleOf(description: "deferred"){
+
+    var count = 1
+    
+    let disposeBag = DisposeBag()
+    
+    let deferredSequence = Observable.deferred({ () -> Observable<String> in
+        
+        print("creat---\(count)")
+        
+        return Observable.create{ observable in
+        
+            print("发射~~~~...")
+            observable.onNext("🐶")
+            observable.onNext("🐱")
+            observable.onNext("🐵")
+            return Disposables.create()
+        }
+    })
+    
+    //第一个订阅者
+    
+    deferredSequence.subscribe{
+    
+        print("第一个订阅者--------")
+        print($0)
+    }.disposed(by: disposeBag)
+    
+    
+    //第二个订阅者
+    deferredSequence.subscribe{
+    
+        print("第二个订阅者")
+        print($0)
+    }.disposed(by: disposeBag)
+}
+
+
+///error 
+
+exampleOf(description: "error"){
+
+    enum testError:Error{
+    
+        case bigError
+    }
+    
+    Observable<Int>.error(testError.bigError).subscribe{
+    
+        print($0)
+    }
+}
+
+
+///doOn: 通过原始事件创建一个副本事件并发射。并返回原始事件
+exampleOf(description: "doOn") { 
+    
+    Observable.of(1,2,3,4).do(onNext: { (event) in
+        print(event)
+    }, onError: { (error) in
+        print(error)
+    }, onCompleted: {
+        print("完成")
+    }, onSubscribe: {
+        print("订阅")
+    }, onDispose: { 
+        print("释放")
+    }).subscribe{
+        
+        print($0)
+    }.disposed(by: DisposeBag())
+}
+
+
+
+

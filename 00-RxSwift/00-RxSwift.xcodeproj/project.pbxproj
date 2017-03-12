@@ -14,7 +14,8 @@
 		59879DB5BCE4DF2B97446330 /* Pods-00-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-00-RxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-00-RxSwift/Pods-00-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		5CA9CF241E74333C00CA3738 /* 00-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "00-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA9CF331E74333C00CA3738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CA9CF391E7434D300CA3738 /* RxSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwift.playground; sourceTree = "<group>"; };
+		5CA9CF391E7434D300CA3738 /* Create_and_subscribing_to_observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Create_and_subscribing_to_observables.playground; sourceTree = "<group>"; };
+		5CAACC411E7595D100589AC1 /* Subjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subjects.playground; sourceTree = "<group>"; };
 		CF840BD5AF6F46C976A2ED76 /* Pods_00_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_00_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE29ABF51BB250B710675073 /* Pods-00-RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-00-RxSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-00-RxSwift/Pods-00-RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,7 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				5CA9CF331E74333C00CA3738 /* Info.plist */,
-				5CA9CF391E7434D300CA3738 /* RxSwift.playground */,
+				5CA9CF391E7434D300CA3738 /* Create_and_subscribing_to_observables.playground */,
+				5CAACC411E7595D100589AC1 /* Subjects.playground */,
 			);
 			path = "00-RxSwift";
 			sourceTree = "<group>";

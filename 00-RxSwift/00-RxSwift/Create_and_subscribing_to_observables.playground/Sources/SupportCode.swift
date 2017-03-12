@@ -1,6 +1,6 @@
 import Foundation
 
-public func exampleOf(description:String, action:  @escaping (Void)->Void)  {
+public func exampleOf(description:String, action:  @escaping ()->Void)  {
     
     print("\n------exampleOf:\(description)------")
     
