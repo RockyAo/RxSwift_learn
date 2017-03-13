@@ -56,6 +56,7 @@ exampleOf(description: "just"){
 
     Observable.just("我是对象")
         .subscribe{ event in
+            
     
             print(event)
     }.addDisposableTo(DisposeBag())
