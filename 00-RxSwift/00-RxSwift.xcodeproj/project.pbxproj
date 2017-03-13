@@ -13,6 +13,7 @@
 /* Begin PBXFileReference section */
 		59879DB5BCE4DF2B97446330 /* Pods-00-RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-00-RxSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-00-RxSwift/Pods-00-RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		5C8174F51E767A3E00BEAF93 /* Transforming_operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Transforming_operators.playground; sourceTree = "<group>"; };
+		5C8174F61E76A14000BEAF93 /* Filtering_and_Conditional_operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Filtering_and_Conditional_operators.playground; sourceTree = "<group>"; };
 		5CA9CF241E74333C00CA3738 /* 00-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "00-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA9CF331E74333C00CA3738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CA9CF391E7434D300CA3738 /* Create_and_subscribing_to_observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Create_and_subscribing_to_observables.playground; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 				5CAACC411E7595D100589AC1 /* Subjects.playground */,
 				5CAACC421E763E8000589AC1 /* Combining_Operators.playground */,
 				5C8174F51E767A3E00BEAF93 /* Transforming_operators.playground */,
+				5C8174F61E76A14000BEAF93 /* Filtering_and_Conditional_operators.playground */,
 			);
 			path = "00-RxSwift";
 			sourceTree = "<group>";
