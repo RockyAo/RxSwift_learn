@@ -75,8 +75,45 @@ exampleOf(description: "replaySubject") {
     
 }
 
-///BehaviorSubject
+///BehaviorSubject : 会有一个初始值，这个值会发送给第一个订阅者。 其他事件会发送给所有订阅者。最近的一个事件会发送给新的订阅者
 exampleOf(description: "BehaviorSubject") { 
     
+    let disposeBag = DisposeBag()
     
+    let subject = BehaviorSubject(value: "behavior")
+    
+    subject.addObservable("第一个响应").disposed(by: disposeBag)
+    
+    subject.onNext("第一个事件")
+    
+    subject.onNext("第二个事件")
+    
+    subject.addObservable("第二个响应").disposed(by: disposeBag)
+    
+    subject.onNext("第三个事件")
+    
+    subject.onNext("第四个事件")
+}
+
+
+///Variable: 包含了BehaviorSubject ，所以拥有 BehaviorSubject 的特性。会将最近的一个事件发送给新的订阅者. 同时Variable，不会发送错误事件，但是自动发送完成事件来中断信号流
+
+
+exampleOf(description: "Variable") { 
+    
+    let disposeBag = DisposeBag()
+    
+    let variable = Variable<String>("默认值")
+    
+    variable.asObservable().addObservable("no.1").disposed(by: disposeBag)
+    
+    variable.value = "第二个值"
+    
+    variable.value = "第三个值"
+    
+    variable.asObservable().addObservable("no.2").disposed(by: disposeBag)
+    
+    variable.value = "第四个值"
+    
+    variable.value = "第五个值"
 }
