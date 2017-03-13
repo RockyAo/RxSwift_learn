@@ -117,3 +117,7 @@ exampleOf(description: "Variable") {
     
     variable.value = "第五个值"
 }
+
+
+
+
