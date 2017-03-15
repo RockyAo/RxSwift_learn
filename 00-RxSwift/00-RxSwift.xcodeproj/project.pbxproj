@@ -15,6 +15,7 @@
 		5C8174F51E767A3E00BEAF93 /* Transforming_operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Transforming_operators.playground; sourceTree = "<group>"; };
 		5C8174F61E76A14000BEAF93 /* Filtering_and_Conditional_operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Filtering_and_Conditional_operators.playground; sourceTree = "<group>"; };
 		5C8174F71E76B10900BEAF93 /* Mathematical_and_Aggregate_operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Mathematical_and_Aggregate_operators.playground; sourceTree = "<group>"; };
+		5C8174F81E76E42A00BEAF93 /* Connectable_Operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Connectable_Operators.playground; sourceTree = "<group>"; };
 		5CA9CF241E74333C00CA3738 /* 00-RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "00-RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA9CF331E74333C00CA3738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CA9CF391E7434D300CA3738 /* Create_and_subscribing_to_observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Create_and_subscribing_to_observables.playground; sourceTree = "<group>"; };
@@ -72,6 +73,7 @@
 				5C8174F51E767A3E00BEAF93 /* Transforming_operators.playground */,
 				5C8174F61E76A14000BEAF93 /* Filtering_and_Conditional_operators.playground */,
 				5C8174F71E76B10900BEAF93 /* Mathematical_and_Aggregate_operators.playground */,
+				5C8174F81E76E42A00BEAF93 /* Connectable_Operators.playground */,
 			);
 			path = "00-RxSwift";
 			sourceTree = "<group>";
