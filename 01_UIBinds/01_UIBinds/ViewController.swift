@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
 
@@ -44,6 +45,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var datePickerLabel: UILabel!
     
+    fileprivate let disposebag = DisposeBag()
+    
+    lazy var dateFormatter: DateFormatter = {
+        
+        let formatter =  DateFormatter()
+        
+        formatter.dateStyle = .medium
+        
+        formatter.timeStyle = .medium
+        
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
