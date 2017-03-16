@@ -46,7 +46,7 @@ class ViewController: UIViewController {
             .addDisposableTo(disposebag)
         
         searchBar.rx.cancelButtonClicked
-            .map{""}
+            .map{"RockyAo"}
             .bindTo(viewModel.searchText)
             .addDisposableTo(disposebag)
         
