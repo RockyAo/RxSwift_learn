@@ -28,7 +28,7 @@
         <!--View Controller-->
         <scene sceneID="cf3-x8-1Mq">
             <objects>
-                <viewController id="mMg-NY-Z4r" customClass="ViewController" customModule="_3_BindTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mMg-NY-Z4r" customClass="ViewController" customModule="_3_BindTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J3c-C7-jEY"/>
                         <viewControllerLayoutGuide type="bottom" id="kgv-gG-yZ1"/>
@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="bOw-YY-RaD" detailTextLabel="viL-Ar-D9e" rowHeight="44" style="IBUITableViewCellStyleValue1" id="hDx-nw-MCZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="bOw-YY-RaD" detailTextLabel="viL-Ar-D9e" rowHeight="44" style="IBUITableViewCellStyleValue1" id="hDx-nw-MCZ">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hDx-nw-MCZ" id="TgE-kS-hbW">
@@ -77,6 +77,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bXs-wI-8lM"/>
+                    <connections>
+                        <outlet property="tableView" destination="Zvd-1V-g4J" id="7sA-x6-2It"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M95-oX-zRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
