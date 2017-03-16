@@ -1,4 +1,4 @@
-# RxSwift 相关学习
+# RxSwift 
 
 ## Platform
 * Xcode 8.0+
@@ -16,7 +16,8 @@ run xxxx.xcworkspace
 ~~~
 
 
-## 参考资料
+## Reference
+
 #### 00 RxMarbles:<http://rxmarbles.com/#scan>
 #### 01 RxMarblesSources:<https://github.com/staltz/rxmarbles>
 #### 02 RxMarblesFor_iOS:<https://github.com/RxSwiftCommunity/RxMarbles> 
@@ -25,15 +26,15 @@ run xxxx.xcworkspace
 
 
 
-## demo工程
+## Demo project introduce
 
-#### 00-RxSwift 基本概念相关playground
+#### 00-RxSwift basic grammar playground
 
-#### 01-UIBinds 基本UI绑定 
+#### 01-UIBinds bind UI 
 
-#### 02-DataBind 数据绑定
+#### 02-DataBind bind Data
 
-#### 03-BindTableView 表单
+#### 03-BindTableView bind form
 
-#### 04-network  网络
+#### 04-network  network
 
