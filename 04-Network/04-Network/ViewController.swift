@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             .addDisposableTo(disposebag)
         
         viewModel.data.asDriver()
-            .map{ return "My\($0.count) repositry"}
+            .map{ return "I have \($0.count) repositry"}
             .drive(navigationItem.rx.title)
             .addDisposableTo(disposebag)
         
