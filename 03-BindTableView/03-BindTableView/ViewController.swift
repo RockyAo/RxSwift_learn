@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    fileprivate let data = [
+    fileprivate let data = Observable.just([
         
         Contributor(name: "lily", id: "00"),
         Contributor(name: "lilei", id: "01"),
@@ -26,14 +29,34 @@ class ViewController: UIViewController {
         Contributor(name: "plane", id: "09"),
         Contributor(name: "ghost", id: "10"),
         Contributor(name: "way", id: "11"),
-    ]
+    ])
+    
+    
+     fileprivate let disposebag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        tableView.delegate = self
-        tableView.dataSource = self
+//        tableView.dataSource = self
+//        tableView.delegate = self
+        
+        data.bindTo(tableView.rx.items(cellIdentifier: "Cell")){ index,contributor,cell in
+            
+            cell.textLabel?.text = contributor.name
+            
+            cell.detailTextLabel?.text = contributor.id
+            
+        }.addDisposableTo(disposebag)
+        
+        tableView.rx.modelSelected(Contributor.self)
+            .subscribe(onNext: { (contributor) in
+                
+                print(contributor)
+                
+            })
+            .addDisposableTo(disposebag)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,33 +69,33 @@ class ViewController: UIViewController {
 
 
 // MARK: - UITableViewDelegate,UITableViewDataSource
-extension ViewController:UITableViewDelegate,UITableViewDataSource{
-    @available(iOS 2.0, *)
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else { return UITableViewCell() }
-        
-        let contributor = data[indexPath.row]
-        
-        cell.textLabel?.text = contributor.name
-        cell.detailTextLabel?.text = contributor.id
-        
-        
-        return cell
-    }
-
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        print(data[indexPath.row].description)
-    }
-
-}
+//extension ViewController:UITableViewDelegate,UITableViewDataSource{
+//    @available(iOS 2.0, *)
+//    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else { return UITableViewCell() }
+//        
+//        let contributor = data[indexPath.row]
+//        
+//        cell.textLabel?.text = contributor.name
+//        cell.detailTextLabel?.text = contributor.id
+//        
+//        
+//        return cell
+//    }
+//
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        
+//        return data.count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        
+//        print(data[indexPath.row].description)
+//    }
+//
+//}
 
