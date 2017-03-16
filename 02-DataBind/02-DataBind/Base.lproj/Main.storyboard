@@ -39,6 +39,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nZe-hl-63o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="EZq-2Z-gbx"/>
                             <constraint firstAttribute="trailing" secondItem="DWz-6e-vng" secondAttribute="trailing" constant="10" id="Nkh-8c-8N6"/>
@@ -47,15 +48,18 @@
                             <constraint firstItem="DWz-6e-vng" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pEr-x5-hgz"/>
                             <constraint firstItem="DWz-6e-vng" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="u5N-0d-n2W"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="KS2-i7-J5U" appends="YES" id="Iht-Sd-kNg"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="button" destination="nZe-hl-63o" id="sxA-S7-ixK"/>
-                        <outlet property="tapGestureRecognizer" destination="rRw-zF-524" id="RCC-Wz-p5i"/>
+                        <outlet property="tapGestureRecognizer" destination="KS2-i7-J5U" id="Ebq-Fe-wFZ"/>
                         <outlet property="textfield" destination="DWz-6e-vng" id="VrV-0M-qa6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="rRw-zF-524"/>
+                <tapGestureRecognizer id="KS2-i7-J5U"/>
             </objects>
         </scene>
     </scenes>

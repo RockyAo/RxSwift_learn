@@ -15,16 +15,52 @@ class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
 
     @IBOutlet weak var textfield: UITextField!
+    
+    fileprivate let disposebag = DisposeBag()
+    
+    
+    fileprivate let textfieldText = Variable("")
+    
+    fileprivate let buttonTaped = PublishSubject<String>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
+        
+        tapGestureRecognizer.rx.event.asDriver()
+            .drive(onNext: { [unowned self] _ in
+                
+                self.view.endEditing(true)
+            }).addDisposableTo(disposebag)
+        
+        
+        button.rx.tap.map{
+        
+            "tapped!"
+        }.bindTo(buttonTaped)
+         .addDisposableTo(disposebag)
+        
+        
+        buttonTaped.subscribe { (event) in
+            print(event)
+        }.addDisposableTo(disposebag)
+        
+    
+        textfield.rx.text.map{ text in
+                return text ?? ""
+            }.bindTo(textfieldText)
+            .addDisposableTo(disposebag)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        textfieldText.asObservable()
+            .subscribe{
+        
+                print($0)
+        }.addDisposableTo(disposebag)
     }
-
+    
+    
+    
+   
 
 }
 
