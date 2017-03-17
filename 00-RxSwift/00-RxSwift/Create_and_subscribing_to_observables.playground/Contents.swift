@@ -63,7 +63,7 @@ exampleOf(description: "just"){
 }
 
 
-///of : 创建一个确定对象响应序列
+///of : 可以把一系列元素转换成事件序列
 
 exampleOf(description: "of"){
 
@@ -149,7 +149,8 @@ exampleOf(description: "generate"){
 }
 
 
-///deferred :  为所有订阅者创建响应序列
+///deferred :  deferred 会等到有订阅者的时候再通过工厂方法创建 Observable 对象，每个订阅者订阅的对象都是内容相同而完全独立的序列。
+
 
 exampleOf(description: "deferred"){
 
@@ -205,7 +206,7 @@ exampleOf(description: "error"){
 }
 
 
-///doOn: 通过原始事件创建一个副本事件并发射。并返回原始事件
+///doOn:doOn 可以监听事件，并且在事件发生之前调用。
 exampleOf(description: "doOn") { 
     
     Observable.of(1,2,3,4).do(onNext: { (event) in
