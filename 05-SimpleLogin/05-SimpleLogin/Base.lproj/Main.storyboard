@@ -97,6 +97,13 @@
                             <constraint firstItem="ApG-jg-u1B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="yzG-fn-coy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accountNameLabel" destination="Iaq-fa-J8P" id="NdK-kR-rm2"/>
+                        <outlet property="accountTextfield" destination="Bbs-ue-kQQ" id="NLZ-WP-8Jg"/>
+                        <outlet property="loginButton" destination="rqH-Mc-SIt" id="N96-wn-j1s"/>
+                        <outlet property="passwordLabel" destination="ApG-jg-u1B" id="O3D-j4-c3x"/>
+                        <outlet property="passwordTextfield" destination="NFx-Mf-PE2" id="6Hy-FJ-0Bj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
